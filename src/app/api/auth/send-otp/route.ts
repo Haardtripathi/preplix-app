@@ -45,6 +45,7 @@ import { sendOTPEmail } from '@/utils/mailer';
 export async function POST(req: Request) {
     try {
         const { email } = await req.json();
+        console.log(process.env.MONGODB_URI)
         console.log("DB Connecting in sendotp")
 
         await connectDB();
