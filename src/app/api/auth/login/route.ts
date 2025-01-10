@@ -8,6 +8,7 @@ import { signToken } from '@/lib/jwt'
 export async function POST(req: Request) {
     try {
         const { email, password, role } = await req.json()
+        console.log("DB Connecting in login")
 
         await connectDB()
         console.log("DB Connected in login")

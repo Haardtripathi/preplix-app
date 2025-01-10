@@ -45,6 +45,8 @@ import { sendOTPEmail } from '@/utils/mailer';
 export async function POST(req: Request) {
     try {
         const { email } = await req.json();
+        console.log("DB Connecting in sendotp")
+
         await connectDB();
 
         console.log("ABC")

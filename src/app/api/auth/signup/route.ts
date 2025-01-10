@@ -10,6 +10,8 @@ export async function POST(req: Request) {
     try {
         const { name, email, password, role, subject, otp } = await req.json()
         // console.log(name, email, password, role, subject, otp)
+        console.log("DB Connecting in signup")
+
         await connectDB()
         console.log("DB Connected in signup")
 

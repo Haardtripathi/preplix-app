@@ -5,6 +5,8 @@ import { OTP } from '@/models/OTP'
 export async function POST(req: Request) {
     try {
         const { email, otp } = await req.json()
+        console.log("Connecting DB in verify-otp")
+
         await connectDB()
         console.log("ABC")
         console.log("DB Connected in verify-otp")
