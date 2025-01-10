@@ -6,6 +6,9 @@ export async function POST(req: Request) {
     try {
         const { email, otp } = await req.json()
         await connectDB()
+        console.log("ABC")
+        console.log("DB Connected in verify-otp")
+
 
         const otpRecord = await OTP.findOne({
             email,

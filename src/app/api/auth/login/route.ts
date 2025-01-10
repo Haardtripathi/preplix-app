@@ -10,6 +10,7 @@ export async function POST(req: Request) {
         const { email, password, role } = await req.json()
 
         await connectDB()
+        console.log("DB Connected in login")
 
         // Find user
         const Model = role === 'student' ? Student : Teacher

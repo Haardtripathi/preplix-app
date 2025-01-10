@@ -11,6 +11,8 @@ export async function POST(req: Request) {
         const { name, email, password, role, subject, otp } = await req.json()
         // console.log(name, email, password, role, subject, otp)
         await connectDB()
+        console.log("DB Connected in signup")
+
 
 
         // Check if user already exists

@@ -47,6 +47,9 @@ export async function POST(req: Request) {
         const { email } = await req.json();
         await connectDB();
 
+        console.log("ABC")
+        console.log("DB Connected in send - otp")
+
         // Generate 6-digit OTP
         const otp = Math.floor(100000 + Math.random() * 900000).toString();
         const expiresAt = new Date(Date.now() + 5 * 60 * 1000); // 5 minutes from now
