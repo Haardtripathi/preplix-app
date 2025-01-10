@@ -14,6 +14,7 @@ export async function POST(req: Request) {
         // Find user
         const Model = role === 'student' ? Student : Teacher
         const user = await Model.findOne({ email })
+        console.log(user)
 
         if (!user) {
             return NextResponse.json(
@@ -22,8 +23,10 @@ export async function POST(req: Request) {
             )
         }
 
+
         // Verify password
         const isValidPassword = await bcrypt.compare(password, user.password)
+        console.log(isValidPassword)
 
         if (!isValidPassword) {
             return NextResponse.json(
