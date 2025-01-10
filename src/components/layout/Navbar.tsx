@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 // 'use client'
 
 // import { useState, useEffect } from 'react'
@@ -124,6 +125,8 @@
 //     )
 // }
 
+=======
+>>>>>>> 9c5394a971e6aacc968b10f831e7860286afc276
 'use client'
 
 import { useState, useEffect } from 'react'
