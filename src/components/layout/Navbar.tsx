@@ -125,8 +125,6 @@
 //     )
 // }
 
-=======
->>>>>>> 9c5394a971e6aacc968b10f831e7860286afc276
 'use client'
 
 import { useState, useEffect } from 'react'
@@ -231,8 +229,8 @@ export function Navbar() {
                                     <Link
                                         href={`/${user?.role}/dashboard`}
                                         className={`px-3 py-2 rounded-md text-sm font-medium ${pathname?.includes('dashboard')
-                                                ? 'bg-primary text-primary-foreground'
-                                                : 'text-foreground hover:bg-muted'
+                                            ? 'bg-primary text-primary-foreground'
+                                            : 'text-foreground hover:bg-muted'
                                             }`}
                                     >
                                         Dashboard
@@ -313,8 +311,8 @@ export function Navbar() {
                                         <Link
                                             href={`/${user?.role}/dashboard`}
                                             className={`px-3 py-2 rounded-md text-sm font-medium text-center ${pathname?.includes('dashboard')
-                                                    ? 'bg-primary text-primary-foreground'
-                                                    : 'text-foreground hover:bg-muted'
+                                                ? 'bg-primary text-primary-foreground'
+                                                : 'text-foreground hover:bg-muted'
                                                 }`}
                                         >
                                             Dashboard
