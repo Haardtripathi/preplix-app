@@ -45,6 +45,11 @@ const languagePrep = [
     { icon: Globe, title: "Adapt and Excel", description: "Learning German or French helps you not just survive but thrive in new environments." },
     { icon: Sparkles, title: "Shine Bright", description: "A strong language score or fluency gives you an edge in competitive global markets." }
 ]
+const mentorshipFeatures = [
+    { icon: Users, title: "2000+ Mentors at Your Fingertips", description: "Choose from certified mentors for IELTS, OET, PTE, or global languages like German and French." },
+    { icon: Clock, title: "Learn on Your Terms", description: "Flexible sessions, personalized plans, and resources tailored to your goals." },
+    { icon: Target, title: "A Journey, Not Just Preparation", description: "From applications to job placements, Preplix supports you at every step." }
+]
 
 const successStories = [
     { name: "Harsh", title: "From Stagnation to Leadership", story: "I was stuck in a repetitive IT job in India. Preplix helped me ace IELTS, and now I'm leading a tech team in Toronto." },
@@ -126,7 +131,7 @@ export default function StudentSignupPage() {
 
     return (
         <AuthOnly>
-            <div className="min-h-screen bg-gradient-to-b from-background to-muted">
+            <div className="min-h-screen bg-gradient-to-b from-background to-muted px-1">
                 {/* Hero Section */}
                 <section className="relative py-20">
                     <div className="container mx-auto px-4">
@@ -206,6 +211,16 @@ export default function StudentSignupPage() {
                                 ))}
                             </div>
                         </motion.div>
+                        <motion.div className="text-center mt-8" variants={itemVariants}>
+                            <Button
+                                size="lg"
+                                className="bg-[#DC0A2D] hover:bg-[#DC0A2D]/90"
+                                onClick={() => document.getElementById('signup-form')?.scrollIntoView({ behavior: 'smooth' })}
+                            >
+                                Explore My Opportunities
+                                <ArrowRight className="ml-2 h-4 w-4" />
+                            </Button>
+                        </motion.div>
                     </div>
                 </section>
 
@@ -248,10 +263,63 @@ export default function StudentSignupPage() {
                             </div>
                         </motion.div>
                     </div>
+                    <motion.div className="text-center mt-8" variants={itemVariants}>
+                        <Button
+                            size="lg"
+                            className="bg-[#DC0A2D] hover:bg-[#DC0A2D]/90"
+                            onClick={() => document.getElementById('signup-form')?.scrollIntoView({ behavior: 'smooth' })}
+                        >
+                            Find Your Path
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                    </motion.div>
+                </section>
+
+
+
+                {/* New What Makes Preplix Different Section */}
+                <section className="py-20 bg-muted/50">
+                    <div className="container mx-auto px-4">
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={containerVariants}
+                            className="space-y-12"
+                        >
+                            <div className="text-center">
+                                <motion.h2
+                                    className="text-3xl font-bold mb-4"
+                                    variants={itemVariants}
+                                >
+                                    What Makes Preplix Different?
+                                </motion.h2>
+                            </div>
+                            <div className="grid md:grid-cols-3 gap-8">
+                                {mentorshipFeatures.map((feature, index) => (
+                                    <motion.div key={index} className="space-y-4" variants={itemVariants}>
+                                        <feature.icon className="h-8 w-8 text-[#DC0A2D]" />
+                                        <h3 className="text-xl font-semibold">{feature.title}</h3>
+                                        <p className="text-muted-foreground">{feature.description}</p>
+                                    </motion.div>
+                                ))}
+                            </div>
+
+                        </motion.div>
+                    </div><motion.div className="text-center mt-8" variants={itemVariants}>
+                        <Button
+                            size="lg"
+                            className="bg-[#DC0A2D] hover:bg-[#DC0A2D]/90"
+                            onClick={() => document.getElementById('signup-form')?.scrollIntoView({ behavior: 'smooth' })}
+                        >
+                            Find My Mentor
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                    </motion.div>
                 </section>
 
                 {/* Success Stories Section */}
-                <section className="py-20 bg-muted/50">
+                <section className="py-20">
                     <div className="container mx-auto px-4">
                         <motion.div
                             initial="hidden"
@@ -278,10 +346,21 @@ export default function StudentSignupPage() {
                             </div>
                         </motion.div>
                     </div>
+                    <motion.div className="text-center mt-8" variants={itemVariants}>
+                        <Button
+                            size="lg"
+                            className="bg-[#DC0A2D] hover:bg-[#DC0A2D]/90"
+                            onClick={() => document.getElementById('signup-form')?.scrollIntoView({ behavior: 'smooth' })}
+                        >
+                            Start Your Success Story
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                    </motion.div>
                 </section>
 
+
                 {/* Your Path to Success Section */}
-                <section className="py-20">
+                <section className="py-20 bg-muted/50">
                     <div className="container mx-auto px-4">
                         <motion.div
                             initial="hidden"
@@ -311,10 +390,21 @@ export default function StudentSignupPage() {
                             </div>
                         </motion.div>
                     </div>
+                    <motion.div className="text-center mt-8" variants={itemVariants}>
+                        <Button
+                            size="lg"
+                            className="bg-[#DC0A2D] hover:bg-[#DC0A2D]/90"
+                            onClick={() => document.getElementById('signup-form')?.scrollIntoView({ behavior: 'smooth' })}
+                        >
+                            Start My Journey
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                    </motion.div>
                 </section>
 
+
                 {/* Countries Section */}
-                <section className="py-20 bg-muted/50">
+                <section className="py-20">
                     <div className="container mx-auto px-4">
                         <motion.div
                             initial="hidden"
@@ -348,10 +438,22 @@ export default function StudentSignupPage() {
                             </div>
                         </motion.div>
                     </div>
+                    <motion.div className="text-center mt-8" variants={itemVariants}>
+                        <Button
+                            size="lg"
+                            className="bg-[#DC0A2D] hover:bg-[#DC0A2D]/90"
+                            onClick={() => document.getElementById('signup-form')?.scrollIntoView({ behavior: 'smooth' })}
+                        >
+                            Explore Countries
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                    </motion.div>
                 </section>
 
+
+
                 {/* Sign Up Form Section */}
-                <section id="signup-form" className="py-20">
+                <section id="signup-form" className="py-20 bg-muted/50">
                     <div className="container mx-auto px-4">
                         <motion.div
                             initial="hidden"
@@ -416,6 +518,43 @@ export default function StudentSignupPage() {
                 </section>
 
                 {/* Final CTA Section */}
+                {/* <section className="py-20 bg-[#DC0A2D]">
+                    <div className="container mx-auto px-4">
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={containerVariants}
+                            className="text-center text-white space-y-8"
+                        >
+                            <motion.h2
+                                className="text-3xl md:text-4xl font-bold"
+                                variants={itemVariants}
+                            >
+                                What's Holding You Back?
+                            </motion.h2>
+                            <motion.p
+                                className="text-xl max-w-2xl mx-auto"
+                                variants={itemVariants}
+                            >
+                                Harsh, Prashasti, and Raj took the leap. What about you?
+                                What could your life look like with the right preparation?
+                                How far could your ambition take you with Preplix by your side?
+                            </motion.p>
+                            <motion.div variants={itemVariants}> Raj took the leap. What about you? What could your life look like with the right preparation? How far could
+                                <Button
+                                    size="lg"
+                                    variant="secondary"
+                                    className="bg-white text-[#DC0A2D] hover:bg-white/90"
+                                    onClick={() => document.getElementById('signup-form')?.scrollIntoView({ behavior: 'smooth' })}
+                                >
+                                    Sign Up and Get Started
+                                    <ArrowRight className="ml-2 h-4 w-4" />
+                                </Button>
+                            </motion.div>
+                        </motion.div>
+                    </div>
+                </section> */}
                 <section className="py-20 bg-[#DC0A2D]">
                     <div className="container mx-auto px-4">
                         <motion.div

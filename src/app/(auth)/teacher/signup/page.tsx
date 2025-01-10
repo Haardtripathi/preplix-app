@@ -36,8 +36,49 @@ const itemVariants = {
 const features = [
     { icon: Globe, title: "Expand Your Reach Globally", description: "Teach students across continents, helping them prepare for IELTS, OET, PTE, or learn German, French, and Spanish." },
     { icon: DollarSign, title: "Earn More While Doing What You Love", description: "Set your rates, control your schedule, and earn through lessons, admissions commissions, and webinars." },
-    { icon: Clock, title: "Teach on Your Terms", description: "Flexible hours. Full control. A platform that adapts to you, not the other way around." }
+    { icon: Clock, title: "Teach on Your Terms", description: "Flexible hours. Full control. A platform that adapts to you, not the other way around." },
+    { icon: Users, title: "Join a Community That Values You", description: "Collaborate with 2000+ mentors shaping futures worldwide, while growing your expertise and personal brand." }
 ]
+
+const globalDemand = [
+    {
+        title: "Exams Students Rely On",
+        items: [
+            "IELTS, OET, PTE: Essential for international admissions and visas",
+            "TOEFL and GRE: Crucial for students targeting top-tier universities"
+        ]
+    },
+    {
+        title: "Languages That Change Lives",
+        items: [
+            "German: The gateway to Germany's thriving education and job markets",
+            "French: A must-have for students heading to Canada and France",
+            "Spanish and Beyond: Open opportunities in Europe, South America, and beyond"
+        ]
+    }
+]
+
+const platformFeatures = [
+    { icon: Award, title: "A Platform Built for You", description: "Manage lessons, communicate with students, and track progress effortlessly with smart tools." },
+    { icon: DollarSign, title: "Earn Without Limits", description: "Beyond teaching, earn through commissions, webinars, and royalties." },
+    { icon: Globe, title: "Global Visibility", description: "Teach from anywhere, connect everywhere. Your expertise deserves a global stage." },
+    { icon: Lightbulb, title: "Your Career, Your Control", description: "Whether part-time or full-time, you set the pace and direction of your mentorship journey." }
+]
+
+const advisoryBoard = {
+    title: "The Preplix Education Advisory Board",
+    subtitle: "Shape the Future of Global Education",
+    description: "A group of exceptional educators guiding Preplix's strategies, creating high-impact content, and mentoring at scale.",
+    benefits: [
+        "Make Your Mark: Influence how global education evolves",
+        "Earn Royalties: Benefit from every student who learns through your curated courses",
+        "Lead with Prestige: Represent Preplix at webinars, conferences, and global campaigns"
+    ],
+    eligibility: [
+        "Expertise in IELTS, OET, PTE, or global languages",
+        "A passion for creating transformative learning experiences"
+    ]
+}
 
 const earningPotential = [
     { title: "Teach and Earn", description: "Set your lesson rates and earn directly from teaching students worldwide." },
@@ -120,7 +161,7 @@ export default function TeacherSignupPage() {
 
     return (
         <AuthOnly>
-            <div className="min-h-screen bg-gradient-to-b from-background to-muted">
+            <div className="min-h-screen bg-gradient-to-b from-background to-muted px-1">
                 {/* Hero Section */}
                 <section className="relative py-20">
                     <div className="container mx-auto px-4">
@@ -195,7 +236,7 @@ export default function TeacherSignupPage() {
                                     Because Teaching Should Be as Transformative for You as It is for Them.
                                 </motion.p>
                             </div>
-                            <div className="grid md:grid-cols-3 gap-8">
+                            <div className="grid md:grid-cols-4 gap-8 9">
                                 {features.map((feature, index) => (
                                     <motion.div key={index} className="space-y-4" variants={itemVariants}>
                                         <feature.icon className="h-8 w-8 text-[#DC0A2D]" />
@@ -206,6 +247,92 @@ export default function TeacherSignupPage() {
                             </div>
                         </motion.div>
                     </div>
+
+                </section>
+
+                {/* Global Demand Section */}
+                <section className="py-20">
+                    <div className="container mx-auto px-4">
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={containerVariants}
+                            className="space-y-12"
+                        >
+                            <div className="text-center">
+                                <motion.h2
+                                    className="text-3xl font-bold mb-4"
+                                    variants={itemVariants}
+                                >
+                                    Global Demand for Your Skills
+                                </motion.h2>
+                                <motion.p className="text-xl text-muted-foreground mb-8">
+                                    Over 500,000 students take IELTS annually. Germany alone welcomes over 400,000 international students yearly.
+                                </motion.p>
+                            </div>
+                            <div className="grid md:grid-cols-2 gap-8">
+                                {globalDemand.map((category, index) => (
+                                    <motion.div key={index} className="space-y-4" variants={itemVariants}>
+                                        <h3 className="text-xl font-semibold">{category.title}</h3>
+                                        <ul className="space-y-2">
+                                            {category.items.map((item, itemIndex) => (
+                                                <li key={itemIndex} className="flex items-start space-x-2">
+                                                    <CheckCircle2 className="h-5 w-5 text-[#DC0A2D] shrink-0 mt-0.5" />
+                                                    <span>{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* How Preplix is Different Section */}
+                <section className="py-20 bg-muted/50">
+                    <div className="container mx-auto px-4">
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={containerVariants}
+                            className="space-y-12"
+                        >
+                            <div className="text-center">
+                                <motion.h2
+                                    className="text-3xl font-bold mb-4"
+                                    variants={itemVariants}
+                                >
+                                    How Preplix is Different
+                                </motion.h2>
+                            </div>
+                            <div className="grid md:grid-cols-2 gap-8">
+                                {platformFeatures.map((feature, index) => (
+                                    <motion.div key={index} className="flex items-start space-x-4" variants={itemVariants}>
+                                        <div className="bg-[#DC0A2D]/10 p-2 rounded-full">
+                                            <feature.icon className="h-6 w-6 text-[#DC0A2D]" />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+                                            <p className="text-muted-foreground">{feature.description}</p>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </motion.div>
+                    </div>
+                    <motion.div className="text-center mt-8" variants={itemVariants}>
+                        <Button
+                            size="lg"
+                            className="bg-[#DC0A2D] hover:bg-[#DC0A2D]/90"
+                            onClick={() => document.getElementById('signup-form')?.scrollIntoView({ behavior: 'smooth' })}
+                        >
+                            Join Preplix Today
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                    </motion.div>
                 </section>
 
                 {/* Earning Potential Section */}
@@ -241,6 +368,16 @@ export default function TeacherSignupPage() {
                             </div>
                         </motion.div>
                     </div>
+                    <motion.div className="text-center mt-8" variants={itemVariants}>
+                        <Button
+                            size="lg"
+                            className="bg-[#DC0A2D] hover:bg-[#DC0A2D]/90"
+                            onClick={() => document.getElementById('signup-form')?.scrollIntoView({ behavior: 'smooth' })}
+                        >
+                            Discover Earning Opportunities
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                    </motion.div>
                 </section>
 
                 {/* Your Journey as a Mentor Section */}
@@ -274,10 +411,82 @@ export default function TeacherSignupPage() {
                             </div>
                         </motion.div>
                     </div>
+                    <motion.div className="text-center mt-8" variants={itemVariants}>
+                        <Button
+                            size="lg"
+                            className="bg-[#DC0A2D] hover:bg-[#DC0A2D]/90"
+                            onClick={() => document.getElementById('signup-form')?.scrollIntoView({ behavior: 'smooth' })}
+                        >
+                            Start Your Mentorship Journey
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                    </motion.div>
+                </section>
+
+                {/* Advisory Board Section */}
+                <section className="py-20">
+                    <div className="container mx-auto px-4">
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={containerVariants}
+                            className="space-y-12"
+                        >
+                            <div className="text-center">
+                                <motion.h2
+                                    className="text-3xl font-bold mb-4"
+                                    variants={itemVariants}
+                                >
+                                    {advisoryBoard.title}
+                                </motion.h2>
+                                <motion.p
+                                    className="text-xl text-muted-foreground"
+                                    variants={itemVariants}
+                                >
+                                    {advisoryBoard.subtitle}
+                                </motion.p>
+                            </div>
+                            <div className="grid md:grid-cols-2 gap-8">
+                                <motion.div variants={itemVariants}>
+                                    <h3 className="text-xl font-semibold mb-4">Why Join?</h3>
+                                    <ul className="space-y-4">
+                                        {advisoryBoard.benefits.map((benefit, index) => (
+                                            <li key={index} className="flex items-start space-x-2">
+                                                <CheckCircle2 className="h-5 w-5 text-[#DC0A2D] shrink-0 mt-0.5" />
+                                                <span>{benefit}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </motion.div>
+                                <motion.div variants={itemVariants}>
+                                    <h3 className="text-xl font-semibold mb-4">Eligibility</h3>
+                                    <ul className="space-y-4">
+                                        {advisoryBoard.eligibility.map((item, index) => (
+                                            <li key={index} className="flex items-start space-x-2">
+                                                <CheckCircle2 className="h-5 w-5 text-[#DC0A2D] shrink-0 mt-0.5" />
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </motion.div>
+                            </div>
+                        </motion.div>
+                    </div>
+                    <motion.div className="text-center mt-8" variants={itemVariants}>
+                        <Button
+                            size="lg"
+                            className="bg-[#DC0A2D] hover:bg-[#DC0A2D]/90"
+                            onClick={() => document.getElementById('signup-form')?.scrollIntoView({ behavior: 'smooth' })}
+                        >
+                            Apply to the Advisory Board
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                    </motion.div>
                 </section>
 
                 {/* Mentor Stories Section */}
-                <section className="py-20">
+                <section className="py-20  bg-muted/50">
                     <div className="container mx-auto px-4">
                         <motion.div
                             initial="hidden"
@@ -304,10 +513,20 @@ export default function TeacherSignupPage() {
                             </div>
                         </motion.div>
                     </div>
+                    <motion.div className="text-center mt-8" variants={itemVariants}>
+                        <Button
+                            size="lg"
+                            className="bg-[#DC0A2D] hover:bg-[#DC0A2D]/90"
+                            onClick={() => document.getElementById('signup-form')?.scrollIntoView({ behavior: 'smooth' })}
+                        >
+                            Join the Preplix Community
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                    </motion.div>
                 </section>
 
                 {/* Sign Up Form Section */}
-                <section id="signup-form" className="py-20 bg-muted/50">
+                <section id="signup-form" className="py-20">
                     <div className="container mx-auto px-4">
                         <motion.div
                             initial="hidden"
